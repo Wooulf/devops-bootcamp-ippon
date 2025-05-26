@@ -1,0 +1,32 @@
+global:
+  domain: argocd.woulf.fr
+
+configs:
+  params:
+    server.insecure: "true"
+
+server:
+  certificate:
+    enabled: true
+    secretName: argocd-tls
+    domain: argocd.woulf.fr
+    issuer:
+      group: cert-manager.io
+      kind: ClusterIssuer
+      name: letsencrypt-prod
+
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    hosts:
+      - argocd.woulf.fr
+    tls:
+      - hosts:
+          - argocd.woulf.fr
+        secretName: argocd-tls
+  service:
+    type: ClusterIP
