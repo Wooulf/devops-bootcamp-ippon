@@ -3,7 +3,7 @@ resources:
   - ../../base
 
 patches:
-  - path: patch-ingress-host.yaml
+  - path: patch-ingress-host.json
     target:
       kind: Ingress
       name: portfolio-ingress

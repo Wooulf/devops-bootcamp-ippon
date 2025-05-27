@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/tls/0/hosts/0",
+    "value": "dev.woulf.fr"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/rules/0/host",
+    "value": "dev.woulf.fr"
+  }
+]
