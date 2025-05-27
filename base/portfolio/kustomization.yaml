@@ -1,3 +1,4 @@
 resources:
   - clusterip-service.yaml
   - deployment.yaml
+  - ingress.yaml

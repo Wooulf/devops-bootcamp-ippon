@@ -1,3 +1,9 @@
 namespace: dev
 resources:
   - ../../base
+
+patches:
+  - path: patch-ingress-host.yaml
+    target:
+      kind: Ingress
+      name: portfolio-ingress
