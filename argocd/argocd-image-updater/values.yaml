@@ -4,3 +4,4 @@ config:
     grpcWeb: false
     insecure: true
     plaintext: true
+    tokenSecretName: "argocd-image-updater-secret"
