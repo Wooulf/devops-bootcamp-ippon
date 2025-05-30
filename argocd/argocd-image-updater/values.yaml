@@ -1,0 +1,6 @@
+config:
+  argocd:
+    serverAddress: "argocd-server.argocd.svc"
+    grpcWeb: false
+    insecure: true
+    plaintext: true
