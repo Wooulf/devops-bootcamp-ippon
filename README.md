@@ -13,7 +13,7 @@ Ce projet est une démonstration complète de mes compétences en DevOps à trav
 
 - Kubernetes (MicroK8s)
 - Kustomize (overlays par environnement)
-- GitHub Actions (CI/CD)
+- GitHub Actions (CI)
 - Prometheus / Grafana (Monitoring)
 - Cert-Manager (HTTPS auto)
 - Terraform, Ansible (Infra-as-Code)
@@ -48,6 +48,14 @@ Cela respecte la philosophie GitOps : Git devient la source de vérité, et tout
 - **Isolation** : chaque env est indépendant, ce qui permet des tests et déploiements ciblés.
 - **Réutilisabilité** : les configs de `base/` sont DRY (Don't Repeat Yourself) et modulables.
 - **Lisibilité** : logique claire, alignée avec les standards Kustomize et GitOps.
+
+## Utilisation de **Argo CD Image Updater**
+
+Pour les déploiements, j'utilise donc ce repo surveillé par Argo CD afin de décider quelle version d'image va tourner sur chaque environnement (dans la continuité de la logique GitOps)...  
+Afin de ne pas avoir besoin de réaliser un commit manuellement à chaque mise à jour de mon application, sur mon repo d'infra (étant donné qu'ils sont séparés), il y a un outil `Argo CD Image Updater` qui permet de faire automatiquement des commits ou PR à valider, avec la nouveau tag de version d'une image.
+Néanmoins, je pourrais être amené à faire beaucoup de déploiements notamment sur la branche dev, et il n'est pas très utile d'avoir des commits qui viendraient polluer à propos de ceci.  
+Afin de résoudre ce problème, je viens donc utiliser un tag dev-latest, et j'utilise `Argo CD Image Updater` pour vérifier le changement de **digest** vers lequel pointe le tag dev-latest, afin de mettre à jour le déploiement.  
+Ainsi, je me retrouve avec un léger compromis de vérité trouvable sur mon registry DockerHub, mais qui est très facile à accéder, et qui me permet de garder un historique de commits propres. 
 
 ## 📬 Contact / Suivi
 
