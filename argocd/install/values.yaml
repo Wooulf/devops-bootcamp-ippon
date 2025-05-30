@@ -2,6 +2,9 @@ global:
   domain: argocd.woulf.fr
 
 configs:
+  cm:
+    accounts.argocd-image-updater: apiKey
+  
   params:
     server.insecure: "true"
 
