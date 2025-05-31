@@ -16,6 +16,5 @@ spec:
       containers:
         - name: portfolio
           image: woulf/portfolio:latest
-          imagePullPolicy: Always
           ports:
             - containerPort: 3000
