@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portfolio-staging
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/write-back-method: argocd
+    argocd-image-updater.argoproj.io/image-list: portfolio=woulf/portfolio
+    argocd-image-updater.argoproj.io/portfolio.allow-tags: regexp:^[0-9]+\.[0-9]+\.[0-9]+-rc$
+    argocd-image-updater.argoproj.io/portfolio.update-strategy: semver
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Wooulf/devops-bootcamp-ippon
+    targetRevision: HEAD
+    path: environments/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
