@@ -1,0 +1,7 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/image",
+    "value": "woulf/portfolio:0.0.0"
+  }
+]

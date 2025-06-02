@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portfolio-prod
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-ssh-git-creds
+    argocd-image-updater.argoproj.io/git-repository: git@github.com:Wooulf/devops-bootcamp-ippon.git
+    argocd-image-updater.argoproj.io/write-back-target: kustomization
+    argocd-image-updater.argoproj.io/image-list: portfolio=woulf/portfolio
+    argocd-image-updater.argoproj.io/portfolio.update-strategy: semver
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Wooulf/devops-bootcamp-ippon
+    targetRevision: main
+    path: environments/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

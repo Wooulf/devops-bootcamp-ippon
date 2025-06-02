@@ -1,3 +1,13 @@
 namespace: prod
 resources:
   - ../../base
+
+patches:
+  - path: patch-ingress-host.json
+    target:
+      kind: Ingress
+      name: portfolio-ingress
+  - path: patch-image-tag.json
+    target:
+      kind: Deployment
+      name: portfolio
