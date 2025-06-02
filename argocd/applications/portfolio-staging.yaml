@@ -5,7 +5,8 @@ metadata:
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/write-back-method: argocd
-    argocd-image-updater.argoproj.io/image-list: portfolio=woulf/portfolio:x-rc
+    argocd-image-updater.argoproj.io/image-list: portfolio=woulf/portfolio:x-0
+    argocd-image-updater.argoproj.io/portfolio.allow-tags: regexp:^.+-rc$
     argocd-image-updater.argoproj.io/portfolio.update-strategy: semver
 spec:
   project: default
