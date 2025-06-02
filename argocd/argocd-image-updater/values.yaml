@@ -6,7 +6,7 @@ config:
     plaintext: true
     tokenSecretName: argocd-image-updater-secret
   
-  gitCommitSigningKey: /app/ssh-keys/id_ed25519
+  gitCommitSigningKey: /app/ssh-keys/sshPrivateKey
   gitCommitSigningMethod: ssh
   gitCommitSignOff: true
 
