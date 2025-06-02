@@ -1,7 +1,6 @@
 namespace: prod
 resources:
   - ../../base
-
 patches:
   - path: patch-ingress-host.json
     target:
@@ -11,3 +10,6 @@ patches:
     target:
       kind: Deployment
       name: portfolio
+images:
+  - name: woulf/portfolio
+    newTag: 1.0.2
