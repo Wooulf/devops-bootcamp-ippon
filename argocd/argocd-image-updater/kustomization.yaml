@@ -1,5 +1,6 @@
 resources:
-  - sealed-secret.yaml
+  - sealed-secret-argocd-token.yaml
+  - sealed-secret-ssh-git-creds.yaml
 
 helmCharts:
   - name: argocd-image-updater

@@ -1,7 +1,21 @@
 config:
   argocd:
-    serverAddress: "argocd-server.argocd.svc"
+    serverAddress: argocd-server.argocd.svc
     grpcWeb: false
     insecure: true
     plaintext: true
-    tokenSecretName: "argocd-image-updater-secret"
+    tokenSecretName: argocd-image-updater-secret
+  
+  gitCommitSigningKey: /app/ssh-keys/id_ed25519
+  gitCommitSigningMethod: ssh
+  gitCommitSignOff: true
+
+volumeMounts:
+  - name: ssh-key
+    mountPath: /app/ssh-keys
+    readOnly: true
+
+volumes:
+  - name: ssh-key
+    secret:
+      secretName: argocd-image-updater-ssh-git-creds
