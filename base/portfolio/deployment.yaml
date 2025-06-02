@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: portfolio
-          image: woulf/portfolio:latest
+          image: woulf/portfolio:__TAG__
           ports:
             - containerPort: 3000
