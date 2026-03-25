@@ -2,7 +2,7 @@
 
 Ce projet est une démonstration complète de mes compétences en DevOps à travers une infrastructure Kubernetes versionnée, observable et sécurisée, construite dans une logique GitOps.
 
-[From craftsmanship to industrialization: Multi-environment GitOps with Argo CD and Kustomize on MicroK8s](https://dev.to/woulf/from-craftsmanship-to-industrialization-multi-environment-gitops-with-argo-cd-and-kustomize-on-205)
+Dernier article : [From craftsmanship to industrialization: Multi-environment GitOps with Argo CD and Kustomize on MicroK8s](https://dev.to/woulf/from-craftsmanship-to-industrialization-multi-environment-gitops-with-argo-cd-and-kustomize-on-205).
 
 ## 🎯 Objectifs
 
@@ -61,7 +61,7 @@ Ainsi, je me retrouve avec un léger compromis de vérité trouvable sur mon reg
 
 ## 📬 Contact / Suivi
 
-Je documente l’évolution de ce projet sur [woulf.fr/blog](https://woulf.fr/blog).  
+Je documente l’évolution de ce projet sur [https://dev.to/woulf/](dev,to/woulf).  
 N'hésitez pas à me contacter si vous avez des retours ou des questions techniques.
 
 ✉️ corentinboucardpro@gmail.com  
