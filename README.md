@@ -2,6 +2,8 @@
 
 Ce projet est une démonstration complète de mes compétences en DevOps à travers une infrastructure Kubernetes versionnée, observable et sécurisée, construite dans une logique GitOps.
 
+[From craftsmanship to industrialization: Multi-environment GitOps with Argo CD and Kustomize on MicroK8s](https://dev.to/woulf/from-craftsmanship-to-industrialization-multi-environment-gitops-with-argo-cd-and-kustomize-on-205)
+
 ## 🎯 Objectifs
 
 - Mettre en place une infrastructure Kubernetes avec trois environnements isolés : `dev`, `staging`, `prod`.
